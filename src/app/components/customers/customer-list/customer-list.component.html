@@ -14,6 +14,11 @@
     </thead>
 
     <tbody>
+
+        <td *ngIf="error$ | async as error">
+            {{error}}
+        </td>
+
         <tr *ngFor="let customer of (customers$ | async)">
             <th scope="row">{{customer.name}}</th>
             <td>{{customer.phone}}</td>
@@ -21,8 +26,8 @@
             <td>{{customer.membership}}</td>
 
             <th class="controls">
-                <a>Edit</a>
-                <a>Delete</a>
+                <a (click)="editCustomer(customer)">Edit</a>
+                <a (click)="deleteCustomer(customer)">Delete</a>
             </th>
         </tr>
     </tbody>

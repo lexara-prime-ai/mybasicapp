@@ -5,7 +5,7 @@
      Customer
 </h3>
 
-<form class="form">
+<form class="form" [formGroup]="customerForm" (submit)="updateCustomer()">
     <!-- NAME -->
     <div class="input">
         <input class="form-control" type="text" formControlName="name" placeholder="Name...">

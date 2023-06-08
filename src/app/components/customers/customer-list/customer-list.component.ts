@@ -15,19 +15,32 @@ import { Customer } from '../customer.model';
     styleUrls: ['customer-list.component.css'],
     standalone: true,
     imports: [CommonModule, RouterModule]
-}) 
-export class ListCustomersComponent implements OnInit { 
-    
+})
+export class ListCustomersComponent implements OnInit {
+
     customers$!: Observable<Customer[]>;
+    error$!: Observable<string>;
 
     constructor(private store: Store<fromCustomer.AppState>) { }
 
     ngOnInit() {
         this.displayCustomers();
-    }  
+        this.error$ = this.store.pipe(select(fromCustomer.getError));
+    }
 
     displayCustomers() {
         this.store.dispatch(new customerActions.LoadCustomers());
         this.customers$ = this.store.pipe(select(fromCustomer.getCustomers))
     }
+
+    deleteCustomer(customer: Customer) {
+        if (confirm("Are you sure you want to delete the user?")) {
+            this.store.dispatch(new customerActions.DeleteCustomer(customer.id));
+        }
+    }
+
+    editCustomer(customer: Customer) {
+        this.store.dispatch(new customerActions.LoadCustomer(customer.id));
+    }
+
 }

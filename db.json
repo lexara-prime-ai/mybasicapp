@@ -1,25 +1,32 @@
 {
-    "customers": [
-        {
-            "name": "Anderson Cooper",
-            "phone": "559-553-34234",
-            "address": "New York",
-            "membership": "Platinum",
-            "id": 1
-        },
-        {
-            "name": "Peter Cullem",
-            "phone": "359-653-11372",
-            "address": "Los Angeles",
-            "membership": "Pro",
-            "id": 2
-        },
-        {
-            "name": "Hinata Hyuga",
-            "phone": "256-583-98372",
-            "address": "Tokyo",
-            "membership": "Pro",
-            "id": 3
-        }
-    ]
+  "customers": [
+    {
+      "name": "Anderson Cooper",
+      "phone": "559-553-34234",
+      "address": "New York",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Peter Cullem",
+      "phone": "359-653-11372",
+      "address": "Los Angeles",
+      "membership": "Basic",
+      "id": 2
+    },
+    {
+      "name": "Hinata Hyuga",
+      "phone": "256-583-98372",
+      "address": "Tokyo",
+      "membership": "Pro",
+      "id": 3
+    },
+    {
+      "name": "Allan Nderitu",
+      "phone": "0113273731",
+      "address": "Komarock",
+      "membership": "Basic",
+      "id": 5
+    }
+  ]
 }
