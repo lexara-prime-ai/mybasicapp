@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import * as customerActions from '../state/customer.actions';
+import * as fromCustomer from '../state/customer.reducer';
 import { Customer } from '../customer.model';
 
 @Component({
@@ -16,9 +18,9 @@ import { Customer } from '../customer.model';
 }) 
 export class ListCustomersComponent implements OnInit { 
     
-    customers!: Customer[];
+    customers$!: Observable<Customer[]>;
 
-    constructor(private store: Store<any>) { }
+    constructor(private store: Store<fromCustomer.AppState>) { }
 
     ngOnInit() {
         this.displayCustomers();
@@ -26,6 +28,6 @@ export class ListCustomersComponent implements OnInit {
 
     displayCustomers() {
         this.store.dispatch(new customerActions.LoadCustomers());
-        this.store.subscribe(state => (this.customers = state.customers.customers));
+        this.customers$ = this.store.pipe(select(fromCustomer.getCustomers))
     }
 }
