@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { Store } from '@ngrx/store';
 
+import * as customerActions from '../state/customer.actions';
+import { Customer } from '../customer.model';
+
 @Component({
     selector: 'customer-list',
     templateUrl: 'customer-list.component.html',
@@ -13,7 +16,7 @@ import { Store } from '@ngrx/store';
 }) 
 export class ListCustomersComponent implements OnInit { 
     
-    customers: any;
+    customers!: Customer[];
 
     constructor(private store: Store<any>) { }
 
@@ -22,7 +25,7 @@ export class ListCustomersComponent implements OnInit {
     }  
 
     displayCustomers() {
-        this.store.dispatch({type: 'LOAD CUSTOMERS'});
+        this.store.dispatch(new customerActions.LoadCustomers());
         this.store.subscribe(state => (this.customers = state.customers.customers));
     }
 }

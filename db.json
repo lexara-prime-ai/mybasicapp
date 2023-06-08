@@ -13,6 +13,13 @@
             "address": "Los Angeles",
             "membership": "Pro",
             "id": 2
+        },
+        {
+            "name": "Hinata Hyuga",
+            "phone": "256-583-98372",
+            "address": "Tokyo",
+            "membership": "Pro",
+            "id": 3
         }
     ]
 }

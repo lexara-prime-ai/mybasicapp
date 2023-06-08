@@ -1,4 +1,4 @@
-
+import { Action } from '@ngrx/store';
 
 import { Customer } from "../customer.model";
 
@@ -14,6 +14,8 @@ export class LoadCustomers implements Action {
 
 export class LoadCustomersSuccess implements Action {
     readonly type = CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS;
+
+    constructor(public payload: Customer[]) { }
 }
 
 export class LoadCustomersFail implements Action {
@@ -22,4 +24,4 @@ export class LoadCustomersFail implements Action {
     constructor(public payload: string) { }
 }
 
-export type Action = LoadCustomers | LoadCustomersSuccess | LoadCustomersFail;
+export type extendedAction = LoadCustomers | LoadCustomersSuccess | LoadCustomersFail;
