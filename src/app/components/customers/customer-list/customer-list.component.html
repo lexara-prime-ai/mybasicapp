@@ -1,0 +1,29 @@
+<h3 class="title">
+    Customers
+</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Membership</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <th scope="row">{{customer.name}}</th>
+            <td>{{customer.phone}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.membership}}</td>
+
+            <th class="controls">
+                <a>Edit</a>
+                <a>Delete</a>
+            </th>
+        </tr>
+    </tbody>
+</table>

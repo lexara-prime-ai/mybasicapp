@@ -1,0 +1,38 @@
+<h3 class="title">
+    <span>
+        Add
+    </span>
+     Customer
+</h3>
+
+<form class="form">
+    <!-- NAME -->
+    <div class="input">
+        <input class="form-control" type="text" formControlName="name" placeholder="Name...">
+    </div>
+
+    <!-- PHONE -->
+    <div class="input">
+        <input class="form-control" type="text" formControlName="phone" placeholder="Phone...">
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="input">
+        <input class="form-control" type="text" formControlName="address" placeholder="Address...">
+    </div>
+
+    <!-- MEMBERSHIP -->
+    <label for="membership-label"></label>
+    <div class="input-group">
+        <select class="form-control" formControlName="membership">
+            <option value="Basic">Basic</option>
+            <option value="Pro">Pro</option>
+            <option value="Platinum">Platinum</option>
+        </select>
+    </div>
+
+    <button class="btn">
+        + Add
+    </button>
+
+</form>

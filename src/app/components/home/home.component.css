@@ -1,0 +1,25 @@
+.jumbotron {
+    padding: 4rem;
+    background: var(--white);
+}
+
+.jumbotron .title {
+    font-size: 2rem;
+}
+
+.jumbotron .lead {
+    letter-spacing: 1.5px;
+    margin-top: 1rem;
+}
+
+.jumbotron .lead .btn {
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 600;
+    padding: .7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
